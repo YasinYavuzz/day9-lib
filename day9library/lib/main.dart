@@ -32,6 +32,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  List<String> _activitiesIcon = ["assets/likeIcon.png","assets/groupIcon.png","assets/podcastIcon.png"];
+  List<String> _activitiesText = ["Liked Songs","Followed Artists","Followed Podcast"];
+  List<String> _activitiesArrow = ["assets/arrowsIcon.png","assets/arrowsIcon.png","assets/arrowsIcon.png"];
+  
 
   void _incrementCounter() {
     setState(() {
@@ -112,12 +116,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Container(
                             margin: EdgeInsets.only(top: 20),
-                            child: Image.asset('assets/playlist1.png'),
+                            child: Image.asset('assets/playlist2.png'),
                           ),
                           Container(
                             margin: EdgeInsets.only(top: 10),
                             child: Text(
-                              'Playlists #1',
+                              'Playlists #2',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
@@ -147,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Container(
                             margin: EdgeInsets.only(top: 10),
                             child: Text(
-                              'Playlists #1',
+                              'Playlists #3',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
@@ -168,12 +172,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Container(
                             margin: EdgeInsets.only(top: 20),
-                            child: Image.asset('assets/playlist1.png'),
+                            child: Image.asset('assets/playlist4.png'),
                           ),
                           Container(
                             margin: EdgeInsets.only(top: 10),
                             child: Text(
-                              'Playlists #1',
+                              'Playlists #4',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
@@ -213,7 +217,7 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 350,
               height: 215,
               child: ListView.builder(
-                itemCount: 3,
+                itemCount: _activitiesIcon.length,
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
                 itemBuilder: (context, index) {
@@ -235,12 +239,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         Container(
                           margin: EdgeInsets.only(top: 15, left: 10),
                           alignment: Alignment.topLeft,
-                          child: Image.asset('assets/likeIcon.png'),
+                          child: Image.asset('${_activitiesIcon[index]}'),
                         ),
                         Container(
-                          margin: EdgeInsets.only(right: 145),
+                          margin: EdgeInsets.only(right: 120),
                           child: Text(
-                            'Liked Songs',
+                            '${_activitiesText[index]}',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 18,
@@ -250,7 +254,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         Container(
                           
-                          child: Image.asset('assets/arrowsIcon.png'),
+                          child: Image.asset('${_activitiesArrow[index]}'),
                         )
                       ],
                     ),
